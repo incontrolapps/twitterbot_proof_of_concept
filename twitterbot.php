@@ -2,16 +2,16 @@
 
 require_once('twitter-api-php.php'); //SOURCE: https://github.com/J7mbo/twitter-api-php
 
-//THESE TOKENS COME FROM THE TWITTER API DEVELOPER CONSOLE. I CREATED A NEW ADDRESS TO TEST WITH SO AS NOT TO CLUTTER MY TIMELINE.
+//THESE TOKENS COME FROM THE TWITTER API DEVELOPER CONSOLE AND HAVE BEEN REDACTED. I CREATED A NEW ADDRESS TO TEST WITH SO AS NOT TO CLUTTER MY TIMELINE.
 $settings = array(
-'oauth_access_token' => '1430134981561655296-moysnd08RyYZuceFF8PanrLoxypmld',
-'oauth_access_token_secret' => 'vdRAYLlAhZo0PSuRrSXmfB4cgNPNINuDZU29UkCSLdnG9',
-'consumer_key' => 'trBn2F31txsjjt7LeuPvb0Ro2',
-'consumer_secret' => 'ftilV37enRB47IkeFAfkCTIepaKT7AroIxliRyiFdMgzimFamC'
+'oauth_access_token' => 'XXXXXXXXXXXXXXX',
+'oauth_access_token_secret' => 'XXXXXXXXXXXXX',
+'consumer_key' => 'XXXXXXXXXXXX',
+'consumer_secret' => 'XXXXXXXXXXXXXXX'
 );
 
 
-/*bearer token : AAAAAAAAAAAAAAAAAAAAALYATAEAAAAAi%2BrcRjIyTX2YASRWkjQShVaNaPw%3DYSsPHLyNSYdnlMIdXmpOukVXbUMwdWE8hI55M8F06iqclQIvxJ*///NOT SURE WHAT THIS DOES
+/*bearer token : XXXXXXXXXXXJ*///NOT SURE WHAT THIS DOES
 
 // SEARCH FOR NEW TWEETS USING HASHTAG
 $url    = 'https://api.twitter.com/1.1/search/tweets.json';
