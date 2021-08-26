@@ -12,3 +12,5 @@ A PHP script that uses:
     
     5. A new instance of the Twitter API to send the image back as a response to the original Tweeter
     
+There is a bug that needs to be overcome: the response tweet is not visible in the user's timeline (though it is visible in the @testplacesearch timeline as a response to the original tweet) and does not generate a notification. This may be because the account has been flagged by Twitter as spam. 
+    
