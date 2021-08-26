@@ -28,7 +28,8 @@ $place = trim($place);
 $id = $response["statuses"][0]["id"];
 $time = $response["statuses"][0]["created_at"];
 $screen_name = $response["statuses"][0]["user"]["screen_name"];
-//FETCH COORDINATES
+
+//FETCH COORDINATES FROM GOOGLE MAPS
 $url = "https://maps.googleapis.com/maps/api/geocode/json?address=".$place.",UK&key=AIzaSyCFNgMdG__MH5xwCSeMuA1xSrae-urczmg";
 $url = preg_replace('/\s+/', '', $url);
 $ch = curl_init();
