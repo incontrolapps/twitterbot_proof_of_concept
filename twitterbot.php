@@ -86,7 +86,7 @@ array_push( $lsoas, $lsoa["properties"]["lsoa_code"]);
 echo "30 lsoas around the centre of $place :";
 echo json_encode($lsoas);
 
-//GET SOME CONTENT - SERVER GENERATED HTML POPULATION PYRAMIDS
+//GET SOME CONTENT - IN THIS CASE, SERVER GENERATED HTML POPULATION PYRAMIDS
 
 
 $fields = [
@@ -103,48 +103,19 @@ curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
 $content = curl_exec($ch);
 echo $content;
 
-//CONVERT THE HTML TO AN IMAGE
+//CONVERT THE HTML TO AN IMAGE USING htmlcsstoimage.com
 
-$html="
-<div class='c_txt' id='c_c_txt'>
-Estimated population distribution of the World 2020 [UN], England and Wales 2018 [ONS], your surroundings 2018 [ONS], and your neighbourhood 2018 [ONS]
-</div>
-";
-
-$html .= $content;
-
-$css = "
-div#c_c_txt {
-    left: 0;
-    width: 85vw;
-}
-
-.c_txt {
-    position: absolute;
-    bottom: 42vw;
-    z-index: 999;
-    font-size: 1vw;
-    color: #ff6a39;
-    font-family: 'Roboto Mono', monospace;
-}
-";
-
+$html = $content;
 $google_fonts = "Roboto";
-
 $data = array('html'=>$html,
-              'css'=>$css,
               'google_fonts'=>$google_fonts);
 
 $ch = curl_init();
-
 curl_setopt($ch, CURLOPT_URL, "https://hcti.io/v1/image");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-
 curl_setopt($ch, CURLOPT_POST, 1);
-// Retrieve your user_id and api_key from https://htmlcsstoimage.com/dashboard
-curl_setopt($ch, CURLOPT_USERPWD, "90eaac19-cf95-4c0e-aae0-d36a95ccc740" . ":" . "df1e6092-04a7-4429-860e-27471b0a4736");
+curl_setopt($ch, CURLOPT_USERPWD, "90eaac19-cf95-4c0e-aae0-d36a95ccc740" . ":" . "df1e6092-04a7-4429-860e-27471b0a4736");// Retrieve your user_id and api_key from https://htmlcsstoimage.com/dashboard
 
 $headers = array();
 $headers[] = "Content-Type: application/x-www-form-urlencoded";
