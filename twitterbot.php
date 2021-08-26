@@ -128,9 +128,8 @@ if (curl_errno($ch)) {
 curl_close ($ch);
 $res = json_decode($result,true);
 $image_url = $res['url']; //<- THIS IS THE SCREENSHOT OF THE OUTPUT
-//$file = file_get_contents($image_url);
-//$image = base64_encode($file);
 
+//SAVE THE IMAGE FILE TO MY OWN SERVER
 $input = $image_url;
 $output =  $place . '.png';
 file_put_contents($output, file_get_contents($input));
